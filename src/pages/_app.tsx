@@ -1,6 +1,13 @@
-import '$/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { Suspense } from "react";
+import type { AppProps } from "next/app";
+import { appWithTranslation, UserConfig } from "next-i18next";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import i18nConfig from "$/../next-i18next.config";
+
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <Suspense fallback="Loading...">{<Component {...pageProps} />}</Suspense>
+  );
 }
+
+export default appWithTranslation(App, i18nConfig as UserConfig);
