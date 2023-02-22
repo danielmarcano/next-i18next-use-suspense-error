@@ -16,7 +16,6 @@ module.exports = {
   },
   defaultNs: "common",
   react: {
-    // Set useSuspense to true, and remove Suspense componentfrom _app.tsx, and you will not need the getStaticProps function
     useSuspense: true,
   },
 };
